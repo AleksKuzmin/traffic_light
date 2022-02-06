@@ -2,26 +2,39 @@
   width: 1200px;
   display: flex;
   margin: 50px;
+  justify-content: center;
 }
 
 .traffic-light {
-  height: 350px;
+  height: 380px;
   width: 200px;
   position: relative;
-  left: 50%;
   transform: translate(-50%);
-  background-color: #e2cb00;
+  background-color: black;
   border: 10px solid black;
   border-color: black;
   border-radius: 40px;
   padding: 20px;
 }
 
-.bulb {
+.red {
   height: 150px;
   width: 150px;
-  background-color: #111;
+  background-color: rgb(224, 14, 14);
   border-radius: 50%;
   margin: 25px auto;
-  transition: background 500ms;
+}
+.green {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  border-radius: 50%;
+  margin: 25px auto;
+}
+.black {
+  height: 150px;
+  width: 150px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 25px auto;
 }
