@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 const Home = () => {
-  const [color, SetColor] = useState([]);
+  const [color, SetColor] = useState({});
 
   useEffect(() => {
     Axios.get("http://localhost:3001/status")
@@ -11,7 +11,7 @@ const Home = () => {
         SetColor(response.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [color]);
 
   function change() {
     Axios.put("http://localhost:3001/changeLights", {}).then((response) => {
@@ -19,7 +19,6 @@ const Home = () => {
     });
   }
 
-  console.log(color.NS);
   return (
     <div className="layout">
       <div className="traffic-light">
@@ -28,8 +27,8 @@ const Home = () => {
       </div>
 
       <div className="traffic-light">
-        <div className={color.WE === "red" ? "black" : "green"}></div>
         <div className={color.WE === "green" ? "black" : "red"}></div>
+        <div className={color.WE === "red" ? "black" : "green"}></div>
       </div>
       <button onClick={change}>Change Traffic Lights</button>
     </div>
