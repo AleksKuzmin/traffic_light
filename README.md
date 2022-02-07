@@ -10,5 +10,5 @@ Using React and Node your tasked with building a user interface and API for two 
 
  - Ensure the update to the lights is made in the UI.
 
-# Run server "npm run start" http://localhost:3001/
-# Run clien "npm run start" http://localhost:3000/
+Run server "npm run start" http://localhost:3001/
+Run clien "npm run start" http://localhost:3000/
