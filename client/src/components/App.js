@@ -1,6 +1,6 @@
 import "../styles/Home.css";
 import { useState, useEffect } from "react";
-import Axios from "axios";
+import axios from "axios";
 
 const TrafficLight = ({ color }) => {
   const redLight = color === "red" ? "red" : "black";
@@ -18,7 +18,8 @@ const Lights = () => {
   const [lights, setLights] = useState({});
 
   const getLightStatus = () =>
-    Axios.get("http://localhost:3001/status")
+    axios
+      .get("http://localhost:3001/status")
       .then((res) => {
         setLights(res.data);
       })
@@ -29,7 +30,7 @@ const Lights = () => {
   }, []);
 
   const change = () => {
-    Axios.put("http://localhost:3001/changeLights", {}).then(getLightStatus);
+    axios.put("http://localhost:3001/changeLights", {}).then(getLightStatus);
   };
 
   return (
