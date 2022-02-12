@@ -32,7 +32,7 @@ const Lights = () => {
   const change = () => {
     axios.put("http://localhost:3001/changeLights", {}).then(getLightStatus);
   };
-
+  // adding some color
   return (
     <div className="layout">
       <TrafficLight color={lights.NS} />
